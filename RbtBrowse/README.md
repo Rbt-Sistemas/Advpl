@@ -13,18 +13,18 @@
 </p>
 
 ## RbtBrowse
-* [Hierarquia](#hierarquia)	
+* [Hierarquia]	
   * [FwBrowse](https://tdn.totvs.com/display/public/PROT/FwBrowse)	
-* [Começando](#começando)	
+* [Sobre](#sobre)	
   * [Pré-requisitos](#pré-requisitos)	
   * [Instalação](#instalação)	
 * [Roadmap](#roadmap)	
 * [Contribuindo com o projeto](#contribuindo-com-o-projeto)	
 * [Material de Apoio](#material-de-apoio)	
 
-## Sobre o Projeto	
+## Sobre  
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/ProjetoMTL/izi-backend/blob/master/storage/app/public/media/scope.png)	
+[![Product Name Screen Shot][product-screenshot]](https://github.com/Rbt-Sistemas/Advpl/RbtBrowse/RbtBrowse1.png)	
 
 Nossa proposta visa melhorar a forma como as pessoas se hospedam em hotéis/motéis, oferecendo uma experiência única	
 de sempre conseguir localizar o melhor lugar, de acordo com seu orçamento e suas necessidades.	
