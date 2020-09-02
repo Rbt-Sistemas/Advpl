@@ -16,7 +16,9 @@
 * [Hierarquia](https://tdn.totvs.com/display/public/PROT/FwBrowse)	
   * [FwBrowse](https://tdn.totvs.com/display/public/PROT/FwBrowse)	
 * [Sobre](#sobre)	
-  * [Pré-requisitos](#pré-requisitos)	
+* [Classe](#classe)	  
+  * [Construtores](#construtores)	
+    * [RbtBrowse:New()](#new)	
   * [Instalação](#instalação)	
 * [Roadmap](#roadmap)	
 * [Contribuindo com o projeto](#contribuindo-com-o-projeto)	
@@ -24,22 +26,23 @@
 
 ## Sobre  
 
+**Exemplo RbtBrowse:**
+
 ![screenshot](https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/example.png?raw=true)	
 
 Nossa proposta visa melhorar a forma como as pessoas se hospedam em hotéis/motéis, oferecendo uma experiência única	
 de sempre conseguir localizar o melhor lugar, de acordo com seu orçamento e suas necessidades.	
 
-Públicos:	
-* Se você é uma pessoa que tem vergonha de levar sua namorada aos motéis por não ter carro; :car:	
-* Se você é um cara solteiro e deseja sair com acompanhantes; :couple_with_heart:	
-* Se você está em família e deseja se acomodar em um hotel / pousada, em uma viagem. :family_man_woman_girl_boy:	
-
-Temos muito trabalho pela frente! :rocket:	
-
-### Backend	
+## Classe	
 O backend da aplicação foi construído à partir dos seguintes frameworks / bibliotecas:	
 * [Laravel 7.0](https://laravel.com)	
 
+  ### Construtores
+    #### RbtBrowse:New()
+      Retorno Objeto RbtBrowse
+      
+      Exemplo:
+        oBrowse := RbtBrowse:New()
 
 ## Começando	
 
