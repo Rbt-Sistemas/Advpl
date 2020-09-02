@@ -13,7 +13,7 @@
 </p>
 
 ## RbtBrowse
-* [Hierarquia]	
+* [Hierarquia](https://tdn.totvs.com/display/public/PROT/FwBrowse)	
   * [FwBrowse](https://tdn.totvs.com/display/public/PROT/FwBrowse)	
 * [Sobre](#sobre)	
   * [Pré-requisitos](#pré-requisitos)	
@@ -24,7 +24,7 @@
 
 ## Sobre  
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/Rbt-Sistemas/Advpl/RbtBrowse/RbtBrowse1.PNG)	
+[![Product Name Screen Shot][product-screenshot]](https://github.com/Rbt-Sistemas/Advpl/RbtBrowse/RbtBrowse1.png)	
 
 Nossa proposta visa melhorar a forma como as pessoas se hospedam em hotéis/motéis, oferecendo uma experiência única	
 de sempre conseguir localizar o melhor lugar, de acordo com seu orçamento e suas necessidades.	
