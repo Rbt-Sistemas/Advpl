@@ -24,7 +24,7 @@
 
 ## Sobre  
 
-[!screenshot](https://github.com/Rbt-Sistemas/Advpl/RbtBrowse/example.png?raw=true)	
+![screenshot](https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/example.png?raw=true)	
 
 Nossa proposta visa melhorar a forma como as pessoas se hospedam em hotéis/motéis, oferecendo uma experiência única	
 de sempre conseguir localizar o melhor lugar, de acordo com seu orçamento e suas necessidades.	
