@@ -2,8 +2,11 @@
 
 <p align="center">
   <a href="https://github.com/Rbt-Sistemas/Advpl">
-    <img src="storage/app/public/media/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/Logo.png?raw=true" alt="Logo>
   </a>
+</p>
+</br>
+<p align="center">												 
   <h3 align="center">Advpl - RbtBrowse</h3>	
   <p align="center">	
     Classe para criação de tabela herdada da FwBrowse
