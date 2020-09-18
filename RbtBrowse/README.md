@@ -2,8 +2,11 @@
 
 <p align="center">
   <a href="https://github.com/Rbt-Sistemas/Advpl">
-    <img src="storage/app/public/media/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/Logo.png?raw=true" alt="Logo>
   </a>
+</p>
+</br>
+<p align="center">												 
   <h3 align="center">Advpl - RbtBrowse</h3>	
   <p align="center">	
     Classe para criação de tabela herdada da FwBrowse
@@ -30,112 +33,352 @@
 
 ![screenshot](https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/example.png?raw=true)	
 
-Nossa proposta visa melhorar a forma como as pessoas se hospedam em hotéis/motéis, oferecendo uma experiência única	
-de sempre conseguir localizar o melhor lugar, de acordo com seu orçamento e suas necessidades.	
+## Classe	 <h3>RbtBrowse <small class="text-muted">class</small>
+  ### Definição
+  <p class="lead">
+      Class to create FwTemporaryTable/FwBrowse from FwBrowse with many
+      features.
+  </p>
+  <h3>RbtBrowse <small class="text-muted">class</small>
+   Class to create FwTemporaryTable/FwBrowse from FwBrowse with many
+   features.
+   
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+#### Exemplo
+  
+  ```clipper
 
-## Classe	
-O backend da aplicação foi construído à partir dos seguintes frameworks / bibliotecas:	
-* [Laravel 7.0](https://laravel.com)	
+      Local aItems := {}
+      Local aFields := {}// Add a column especifiedaAdd(aFields,{SELECOL',;
+      // Name of col markup.
+      Sel,; //Title
+      1,;//Size
+      0,;//Decimal
+      ,;//Picture
+      L,;//Type
+      .F.}) //Visible (If .F. Create colunm in only FwTemporaryTable
+      // then dont diplay in FwBrowse)//Add Col from SX3aAdd(aFields,{B1_COD})
+      aAdd(aFields,{B1_DESC})//Add a column especified
+      DescaAdd(aFields,{'DESCRICAO',; // Name of col markup.
+      Desc,; //Title
+      9,;//Size
+      0,;//Decimal
+      @!,;//Picture
+      C,;//Type
+      .T.}) //Visible (If .F. Create colunm in only FwTemporaryTable//
+      // then dont diplay in FwBrowse)//Add a column especified
+      VaLOR// aAdd(aFields,{VALOR',; // Name of col vlor.
+      Valor,; //Title
+      12,;//Size
+      2,;//Decimal
+      @!,;//Picture
+      N,;//Type
+      .T.}) //Visible (If .F. Create colunm in only FwTemporaryTable//
+      // then dont diplay in FwBrowse)//Add items from array at
+      finish, in order of columns and add a logical in finish (Deleted)
+      aAdd(aItems,{.T.,CODIGO001,DESC COD 01,POR ITEM,15.20,.F.})
+      aAdd(aItems,{.T.,CODIGO002,DESC COD 02,POR ITEM2,10.50,.F.})
+      oBrowse := RbtBrowse():New()
+      oBrowse:UseTempTable := .T.
+      oBrowse:CreateIndexs := .T.
+      oBrowse:MarkColumn := SELECOL
+      oBrowse:FieldsGrid := aFields
+      oBrowse:Items := aItems// //Add items from query dont need
+      deleted default .F.
+      oBrowse:Query := SELECT TOP 100 'F' AS SELECOL,B1_COD,B1_DESC,'EXEMPLO'
+      AS DESCRICAO, 0.00 AS VALOR +;
+      FROM +RETSQLNAME(SB1)+ WHERE D_E_L_E_T_&lt;&gt;'*'
+      oBrowse:Title := Titulo Browse
+      oBrowse:Create(oDlg)// //Num rowsoBtn1:bAction := {||
+      MsgAlert(cValToChar(oBrowse:GetRowsCount()),Linhas!) }
+      //Sum of coloBtn2:bAction := {||
+      MsgAlert(cValToChar(oBrowse:GetColumnTotal(VALOR)),Total)}
+      oBrowse:Activate()
+      ACTIVATE MSDIALOG oDlg CENTERED
+      Return    
+  ```
+  
+  #### Veja também
+ <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
 
-  ### Construtores
-    #### RbtBrowse:New()
-      Retorno Objeto RbtBrowse
+  ### New <small class="text-muted">method</small>
+	Construtor da classe
+  #### Autor
+    Roberto Alves
+  #### Desde
+    13/03/2020
+  #### Versão
+    1.3.0
+  #### Exemplo
+  
+  #### Retorno
+	
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td>RbtBrowse</td>
+</tr>
+</tbody>
+</table>
+
+#### Veja também
+ <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+
+### SetFreeze <small class="text-muted">method</small>
+     
+<hr />
+<p class="lead">
+Index of col to freeze, just 1 by limitation of framework
+</p>
       
-      Exemplo:
-        oBrowse := RbtBrowse:New()
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
 
-## Começando	
 
-O backend da aplicação roda sob o framework Laravel na versão 7, portanto, boa parte dos requisitos 	
-abaixo são necessários por conta dele.	
 
-### Pré-requisitos
-* PHP >= 7.2.5 
-* Composer
-* Node.js >= 10.0 
-* MySQL >= 5.6
-* BCMath PHP Extension
-* Ctype PHP Extension
-* Fileinfo PHP extension
-* JSON PHP Extension	
-* Mbstring PHP Extension	
-* OpenSSL PHP Extension	
-* PDO PHP Extension	
-* Tokenizer PHP Extension	
-* XML PHP Extension
+<div class="table-responsive">
+<h4>Parâmetros</h4>
+<table class="table table-striped table-bordered table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Uso</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nCol</td>
+      <td>numeric</td>
+      <td>false</td>
+      <td>Col Index to be freeze</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-### Instalação
-1. Clone o repositório
-```sh	
-git clone https://github.com/ProjetoMTL/izi-backend.git	
-```
+#### Veja também
+ 
+<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
 
-2. Instale as dependências do composer	
-```sh	
-composer install	
-```
+### CreateTemp <small class="text-muted">method</small>
 
-3. Instale as dependências do npm
-```sh	
-npm install	
-```
+<hr />
+<p class="lead">Create a FwTemporaryTable by FieldsGrid property</p>
+      
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+#### Exemplo
+   
+#### Outras Informações
 
-4. Renomeie o arquivo `.env.example` para `.env`
+<table class="table table-striped table-bordered table-hover table-condensed">
+  <tbody>
+    <tr>
+      <td>obs</td>
+      <td>Need FieldsGrid property previous setted</td>
+    </tr>
+  </tbody>
+</table>
+	  
+#### Veja também
+ <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
 
-5. Mude as configurações do arquivo `.env` na seção `DB_*` para um banco local MySQL da sua máquina:
-```dotenv
-DB_CONNECTION=mysql	
-DB_HOST=host_do_banco_de_dados (exemplo: 127.0.0.1)	
-DB_PORT=porta_do_banco	
-DB_DATABASE=nome_do_banco_de_dados	
-DB_USERNAME=usuario_do_banco_de_dados	
-DB_PASSWORD=senha_do_banco_de_dados	
-```
 
-6. Rode as migrations
-```sh
-php artisan migrate
-```
+### CreateMarkColumn <small class="text-muted">method</small>
 
-7. Gere a chave da aplicação
-```sh	
-php artisan key:generate	
-```
+<hr />
+<p class="lead">Create a mark column of MarkColumn property</p>
 
-8. Rode a aplicação no servidor local (por padrão rodará na porta `8000`)
-```sh	
-php artisan serve	
-```
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0     
+      
+      
+      
+#### Veja também
 
-9. Acesse no browser `http://localhost:8000`
+<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
 
-## Roadmap
+### GetColumnTotal <small class="text-muted">method</small>
 
-O roadmap de desenvolvimento você encontra no nosso [quadro do trello](https://trello.com/b/LsBD3WhP/mtl-backend).
+<hr />
+<p class="lead">Get sum of especified column</p>
+      
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+      
+<div class="table-responsive">
+  <h4>Parâmetros</h4>
+  <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Uso</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>cColumn</td>
+        <td>caractere</td>
+        <td>true</td>
+        <td>
+          Name of col to sumName of col to sumName of col to sumName of
+          col to sumName of col to sumName of col to sumName of col to
+          sumName of col to sumName of col to sumName of col to sum.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-## Contribuindo com o projeto
+#### Veja também
+<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
 
-Contribuições são o que tornam a comunidade de desenvolvedores um lugar incrível para aprender,
-inspirar e criar. Todas as contribuições que você fizer serão **muito bem vindas**.
 
-1. Faça um `fork` do projeto
-2. Crie sua `branch` de recursos (`git checkout -b feature/AmazingFeature`)	
-3. Faça um `commit` de suas alterações (`git commit -m 'Add some AmazingFeature'`)	
-4. Faça um `push` da sua `branch` (`git push origin feature/AmazingFeature`)	
-5. Abra uma `pull request`
+### GetRowsCount <small class="text-muted">method</small>
 
-## Material de apoio
+<hr />
+<p class="lead">Get number of rows</p>
+      
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+      
+      
+      
+#### Retorno
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead>
+  <tr>
+    <th>Tipo</th>
+    <th>Descrição</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>numeric</td>
+    <td>NumRows</td>
+  </tr>
+</tbody>
+</table>
 
-1. [Arquitetura MVC](https://www.devmedia.com.br/introducao-ao-padrao-mvc/29308)
-2. [Crud com Laravel](https://www.youtube.com/watch?v=c4v1D2bYD5U)	
-3. [Instalando e configurando o Laravel](https://www.youtube.com/watch?v=pEGp2ju24eE)	
-4. [Laravel além do básico](https://medium.com/joaorobertopb/laravel-al%C3%A9m-do-b%C3%A1sico-0-introdu%C3%A7%C3%A3o-96d37a938d14)	
-5. [Laravel tips](https://www.youtube.com/watch?v=s9CH7-U7-ZQ&list=PLi_gvjv-JgXqop7hgVKZMGPiT9rUYy1sr)	
-6. [Laravel (O Framework PHP dos Artesãos da Web)](https://www.youtube.com/watch?v=4oxjaQCJRaA&t=534s)	
-7. [PHP e Laravel 5.4](https://www.youtube.com/watch?v=0Fol4p26Xv0&list=PLw6ZnC_OJcva1PZgT_cdURU2pX0Eh6_nt)
+#### Veja também
 
-[repository]: https://github.com/ProjetoMTL/izi-backend
-[logo]: storage/app/public/media/logo.png	
-[product-screenshot]: storage/app/public/media/scope.png	
-[raw-product-screenshot]: https://github.com/ProjetoMTL/izi-backend/blob/master/storage/app/public/media/scope.png	
-[trello]: https://trello.com/b/LsBD3WhP/mtl-backend
+<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+
+
+### AdjustAFields <small class="text-muted">method</small>
+
+<hr />
+<p class="lead">Adjust Columns property from FieldsGried</p>
+      
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+      
+#### Veja também
+<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+
+### CreateBrw <small class="text-muted">method</small>
+<hr />
+<p class="lead">Create a RbtBrowse pre configured</p>
+      
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+#### Exemplo
+     
+#### Veja também
+<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+
+### Create <small class="text-muted">method</small>
+<hr />
+<p class="lead">Create browse before activate</p>
+      
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+
+<div class="table-responsive">
+  <h4>Parâmetros</h4>
+  <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Uso</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>oParent</td>
+        <td>object</td>
+        <td>false</td>
+        <td>Parent containner</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Veja também
+ <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+
+
+### Destroy <small class="text-muted">method</small>
+<hr />
+<p class="lead"></p>
+      
+#### Autor
+    Roberto Alves
+#### Desde
+    13/03/2020
+#### Versão
+    1.3.0
+      
+#### Veja também
+ <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+
