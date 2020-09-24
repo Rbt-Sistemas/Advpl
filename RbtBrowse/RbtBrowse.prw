@@ -10,6 +10,7 @@
 (examples)
 @see (links_or_references)
 /*/
+
 class RbtBrowse FROM FWBrowse
 	
 	Data FieldsGrid
@@ -223,7 +224,7 @@ ENDIF
 
 IF LEN(::FieldsGrid) == 0
 	IF ::AliasX3 == NIL
-		Alert("Campos ou Alias n„o preenchido!")
+		Alert("Campos ou Alias n√£o preenchido!")
 		RETURN
 	ELSE
 		aFieldSx3 := FWSX3Util():GetAllFields(::AliasX3, .F. )
