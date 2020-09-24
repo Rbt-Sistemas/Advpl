@@ -9,7 +9,7 @@
 @example
 (examples)
 @see (links_or_references)
-/*/
+/*//
 
 class RbtBrowse FROM FWBrowse
 	
