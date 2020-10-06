@@ -2,32 +2,42 @@
 #DEFINE  ENTER CHR(13)+CHR(10) 
 
 /*/{Protheus.doc} RbtBrowse
-(long_description)
+Class to create "FwTemporaryTable/FwBrowse" from FwBrowse with many features.
+@type	class
 @author    Roberto Alves
 @since     13/03/2020
-@version   1.0.1
-@example
-(examples)
-@see (links_or_references)
-/*//
-
+@version   1.3.0
+@param AdjustedColumns,logical, Property to indicate if array FieldsGrid are in determinated order.!false
+@param AliasX3, caracter,Set an x3 alias to open.</br>Get TableObj:FwTemporaryTable:GetAlias() or x3 Seted</br>Example: <code>RbtBrowse:AliasX3 := "SB1"</code>,!false 
+@param Columns, array,Array of Columns with processed FieldsGrid after AdjustAFields().!false
+@param CreateIndexs, logical,Logical to get OR set to create or get index status.!false
+@param FieldsGrid,array,Array of col definition or x3 field name</br>Exemplo:<br><code>Especified:<br>aAdd(FieldsGrid,{SELECOL',; // Name of col markup.<br>              "Sel",; //Title<br>              1,;//Size<br>              0,;//Decimal<br>              "",;//Picture<br>              "L",;//Type<br>			 .F.}) //Visible (If .F. Create colunm in only FwTemporaryTable<br>			 	//			  then dont diplay in FwBrowse)<br><br>//Add Col from SX3<br>aAdd(FieldsGrid,{"B1_COD"})  <br></code>!true
+@param Indexs,array,Array of string with single col to be index </br>Exemplo:<br><code>aAdd(aIndex,"B1_COD") </code>
+@param Items, array, Array of array  with vlues in col sequence </br>Exemplo:<br><code>aAdd(aIndex,{.F.,"00001","DESC 01 ",0.50,.F.)</code>!true
+@param MarkColumn, caracter, Name of col to be a markup col</br>Exemplo:<br><code> cMark := "SEL_COL"</code>!false
+@param Query,caractere, An sql query  with values in col sequence</br>Exemplo:<br><code>oBrowse:Query            := "SELECT TOP 100 'F' AS SELECOL,B1_COD,B1_DESC,'EXEMPLO' AS DESCRICAO, 0.00 AS VALOR "+;<br>                                 " FROM "+RETSQLNAME("SB1")+" WHERE D_E_L_E_T_<>'*'"</code>!false
+@param TableObj,object, get de FwTemporaryTable Object!false
+@param Title, caracter,Title of FwBrowse!false 
+@param UseTempTable,logical,Indicate to use temp table or just array!false
+@example <code> Local aItems  := {} <br> Local aFields := {}<br>// Add a column especified<br>aAdd(aFields,{SELECOL',; // Name of col markup.<br>              "Sel",; //Title<br>              1,;//Size<br>              0,;//Decimal<br>              "",;//Picture<br>              "L",;//Type<br>			 .F.}) //Visible (If .F. Create colunm in only FwTemporaryTable<br>			 	//			  then dont diplay in FwBrowse)<br><br>//Add Col from SX3<br>aAdd(aFields,{"B1_COD"})  <br>aAdd(aFields,{"B1_DESC"})<br><br><br>//Add a column  especified Desc<br>aAdd(aFields,{'DESCRICAO',; // Name of col markup.<br>            "Desc",; //Title<br>               9,;//Size<br>               0,;//Decimal<br>               "@!",;//Picture<br>               "C",;//Type<br>			   .T.}) //Visible (If .F. Create colunm in only FwTemporaryTable<br>			//  				 // then dont diplay in FwBrowse)<br><br>//Add a column  especified VaLOR<br>// aAdd(aFields,{VALOR',; // Name of col vlor.<br>              "Valor",; //Title<br>               12,;//Size<br>               2,;//Decimal<br>               "@!",;//Picture<br>               "N",;//Type<br> 			  .T.}) //Visible (If .F. Create colunm in only FwTemporaryTable<br>// 			 				 // then dont diplay in FwBrowse)<br><br>//Add items from array at finish, in order of columns and add a logical in finish (Deleted)<br> aAdd(aItems,{.T.,"CODIGO001","DESC COD 01","POR ITEM",15.20,.F.})<br> aAdd(aItems,{.T.,"CODIGO002","DESC COD 02","POR ITEM2",10.50,.F.})<br><br> oBrowse := RbtBrowse():New()<br> oBrowse:UseTempTable     := .T.<br> oBrowse:CreateIndexs    := .T.<br> oBrowse:MarkColumn       := "SELECOL"<br> oBrowse:FieldsGrid       := aFields<br> oBrowse:Items            := aItems<br><br>// //Add items from query dont need deleted default .F.<br> oBrowse:Query            := "SELECT TOP 100 'F' AS SELECOL,B1_COD,B1_DESC,'EXEMPLO' AS DESCRICAO, 0.00 AS VALOR "+;<br>                                 " FROM "+RETSQLNAME("SB1")+" WHERE D_E_L_E_T_<>'*'"<br> oBrowse:Title           := "Titulo Browse"<br> oBrowse:Create(oDlg)<br>// //Num  rows<br>oBtn1:bAction := {|| MsgAlert(cValToChar(oBrowse:GetRowsCount()),"Linhas!") } <br> //Sum of col<br>oBtn2:bAction := {|| MsgAlert(cValToChar(oBrowse:GetColumnTotal("VALOR")),"Total")} <br> oBrowse:Activate()<br> ACTIVATE MSDIALOG oDlg CENTERED<br> Return<br></code>
+@see https://github.com/Rbt-Sistemas/Advpl
+@link https://www.rbtsistemas.com.br/images/browsesample1.png
+/*/	
 class RbtBrowse FROM FWBrowse
-	
-	Data FieldsGrid
-	Data Itens
-	Data Titulo
-	Data UseTempTable
-	Data TableObj
-	Data AdjustedFields 
-	Data AliasX3
-	Data Colunas
-	Data Query
-	Data MarkColumn
-	Data Indices
-	Data CreateIndices
-	
-	
-	
+
+	Data AdjustedColumns
+	Data AliasX3 
+	Data Columns        
+	Data CreateIndexs
+	Data FieldsGrid   
+	Data Indexs    
+	Data Items         
+	Data MarkColumn    
+	Data Query     
+	Data TableObj      
+	Data Title        
+	Data UseTempTable  
+
 	method New() constructor 
 	method Create(oParent)
 	method CreateBrw()
@@ -38,35 +48,58 @@ class RbtBrowse FROM FWBrowse
 	method CreateMark()
 	method GetRowsCount()
 	method SetFreeze(nFreeze)
+	method ClearRows()
+	method AddArRows(aItems)
 
 endclass
 
 
+/*/{Protheus.doc} New constructor
+Constructor of RbtBrowse
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+@return object,RbtBrowse
+/*/	
 method New() class RbtBrowse
 		_Super:New()
-		AdjustedFields  := .F.
-		::Colunas := {}
-		::CreateIndices := .T.
+		AdjustedColumns  := .F.
+		::Columns := {}
+		::CreateIndexs := .T.
 return
 
-
+/*/{Protheus.doc} SetFreeze
+Index of col to freeze, just 1 by limitation of framework
+@param nCol,numeric, Col Index to be freeze
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+/*/	
 method SetFreeze(nCol) class RbtBrowse
 
 ::oBrowse:nFreeze := nCol
 ::SetLineHeight(::nRowHeight)
 ::Refresh(.t.)
 
-
-
 return
 
 
+/*/{Protheus.doc} CreateTemp
+Create a FwTemporaryTable by FieldsGrid property
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+@obs  Need FieldsGrid property previous setted
+/*/	
 method  CreateTemp() class RbtBrowse
 	Local cQuery := ""
     Local _nI,i,_nY
 	::TableObj := FWTemporaryTable():New()
     
-    IF !::AdjustedFields 
+    IF !::AdjustedColumns 
     	::AdjustAFields()
     ENDIF
         
@@ -83,13 +116,13 @@ method  CreateTemp() class RbtBrowse
 
     ::TableObj:SetFields(aFields)
     
-    IF ::CreateIndices 
+    IF ::CreateIndexs 
     
-        IF ::Indices <> NIL
-            FOR _nI := 1 TO Len(::Indices)
+        IF ::Indexs <> NIL
+            FOR _nI := 1 TO Len(::Indexs)
                 
                             
-                ::TableObj:AddIndex(StrZero(_nI,2), {::Indices[_nI]} )
+                ::TableObj:AddIndex(StrZero(_nI,2), {::Indexs[_nI]} )
             Next _nI
         ELSE
 
@@ -138,13 +171,13 @@ method  CreateTemp() class RbtBrowse
     	 
     ENDIF
     
-    IF ::Itens <> NIL
+    IF ::Items <> NIL
 
-	    For _nI := 1 To Len(::Itens)
+	    For _nI := 1 To Len(::Items)
 	    	RecLock((::AliasX3),.T.)
 	    		For _nY := 1 To Len(::FieldsGrid)
 	    			cFlName := ::FieldsGrid[_nY][1]
-	    			cValA	:= ::Itens[_nI][_nY]
+	    			cValA	:= ::Items[_nI][_nY]
                     cTpField := ::FieldsGrid[_nY][6]
                     IF cTpField == "D"
                         &(" "+ ::AliasX3 + "->"+ cFlName+" :=  stod(cValA) ")
@@ -164,6 +197,66 @@ method  CreateTemp() class RbtBrowse
 Return
 
 
+/*/{Protheus.doc} AddArRows
+Add an array of items to temp table
+@param aItems,array, Itens to add.
+@type method
+@author    Roberto Alves
+@since     13/09/2020
+@version   1.3.0
+/*/	
+method AddArRows(aItems) Class RbtBrowse
+
+ IF aItems <> NIL
+
+	    For _nI := 1 To Len(aItems)
+	    	RecLock((::AliasX3),.T.)
+	    		For _nY := 1 To Len(::FieldsGrid)
+	    			cFlName := ::FieldsGrid[_nY][1]
+	    			cValA	:= aItems[_nI][_nY]
+                    cTpField := ::FieldsGrid[_nY][6]
+                    IF cTpField == "D"
+                        &(" "+ ::AliasX3 + "->"+ cFlName+" :=  stod(cValA) ")
+                    ELSE
+                        &(" "+ ::AliasX3 + "->"+ cFlName+" :=  cValA ")
+                    ENDIF
+				   
+			    Next _nY
+			 MsUnlock()
+	    Next _nI
+	ENDIF   
+
+return
+
+
+/*/{Protheus.doc} ClearRows
+Truncate temp table.
+@type method
+@author    Roberto Alves
+@since     13/09/2020
+@version   1.3.0
+/*/	
+Method ClearRows() Class RbtBrowse
+
+Local  cQuery :=   "TRUNCATE TABLE " + ::AliasX3 +  "
+
+CONOUT(cQuery)
+MemoWrite( "\RbtBrwQuery.TXT", cQuery )
+if TCSqlExec(cQuery) < 0
+ConOut("ErroSql:", TCSqlError())
+endif
+
+
+return
+
+
+/*/{Protheus.doc} CreateMarkColumn
+Create a mark column of MarkColumn property
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+/*/	
 Method CreateMark() Class RbtBrowse
 
 	IF ::MarkColumn <> NIL
@@ -181,7 +274,15 @@ Return
 
 
 
-
+/*/{Protheus.doc} GetColumnTotal
+Get sum of especified column
+@type method
+@param cColumn,caractere,Name of col to sum.!true
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+@return numeric,Sum of cColumn
+/*/
 METHOD GetColumnTotal(cColumn)  Class RbtBrowse
 
 	Local aAreaB := (::AliasX3)->(GetArea())
@@ -198,6 +299,15 @@ METHOD GetColumnTotal(cColumn)  Class RbtBrowse
 Return nTot
 
 
+
+/*/{Protheus.doc} GetRowsCount
+Get number of rows
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+@return numeric,NumRows
+/*/
 METHOD GetRowsCount()  Class RbtBrowse
 
 	Local aAreaB := (::AliasX3)->(GetArea())
@@ -214,6 +324,13 @@ METHOD GetRowsCount()  Class RbtBrowse
 Return nTot
 
 
+/*/{Protheus.doc} AdjustAFields
+Adjust Columns property from FieldsGried
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+/*/
 method AdjustAFields() Class RbtBrowse
 
 Local _nI
@@ -257,17 +374,23 @@ ELSE
 	Next _nI
 ENDIF
 
-::AdjustedFields := .T.
+::AdjustedColumns := .T.
 
-return
+return	
 
 
-
+/*/{Protheus.doc} CreateBrw
+Create a RbtBrowse pre configured
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+/*/
 method  CreateBrw() class RbtBrowse
 
 Local nI := 1
 
-IF !::AdjustedFields 
+IF !::AdjustedColumns 
     	::AdjustAFields()
 ENDIF
 
@@ -291,25 +414,34 @@ For nI := 1 To Len(::FieldsGrid)
 	
 	ENDIF
 	IF lAddCol
-		aAdd(::Colunas,FWBrwColumn():New())
-		::Colunas[nCol]:SetData(&("{||"+::AliasX3+"->"+::FieldsGrid[nI][1]+"}"))
-		::Colunas[nCol]:SetTitle(::FieldsGrid[nI][2])
-		::Colunas[nCol]:SetSize(::FieldsGrid[nI][3])
-		::Colunas[nCol]:SetDecimal(::FieldsGrid[nI][4])
-		::Colunas[nCol]:SetPicture(::FieldsGrid[nI][5])
+		aAdd(::Columns,FWBrwColumn():New())
+		::Columns[nCol]:SetData(&("{||"+::AliasX3+"->"+::FieldsGrid[nI][1]+"}"))
+		::Columns[nCol]:SetTitle(::FieldsGrid[nI][2])
+		::Columns[nCol]:SetSize(::FieldsGrid[nI][3])
+		::Columns[nCol]:SetDecimal(::FieldsGrid[nI][4])
+		::Columns[nCol]:SetPicture(::FieldsGrid[nI][5])
         nCol++
 	ENDIF
 Next nI
 
 return
 
+
+/*/{Protheus.doc} Create
+Create browse before activate
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+@param oParent,object,Parent containner
+/*/
 method Create(oParent) class RbtBrowse
     
     ::CreateBrw()
-    ::setDescription(::Titulo)
+    ::setDescription(::Title)
     ::setDataQuery(.F.)
     ::CreateMark()
-    ::setColumns(::Colunas)
+    ::setColumns(::Columns)
     ::setDataTable(.T.)
     ::setAlias(::AliasX3)
     ::setUseFilter()
@@ -318,6 +450,12 @@ method Create(oParent) class RbtBrowse
 Return
 
 
+/*/{Protheus.doc} Destroy
+@type method
+@author    Roberto Alves
+@since     13/03/2020
+@version   1.3.0
+/*/
 Method Destroy() class RbtBrowse
 	IF ::UseTempTable
 		::TableObj:Delete()
