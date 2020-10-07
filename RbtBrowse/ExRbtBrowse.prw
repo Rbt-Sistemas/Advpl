@@ -55,15 +55,15 @@ aAdd(aItens,{.T.,"CODIGO002","DESC COD 02","POR ITEM2",10.50,.F.})
 
 oBrowse := RbtBrowse():New()
 oBrowse:UseTempTable     := .T.
-oBrowse:CreateIndices    := .T.
+oBrowse:CreateIndexs    := .T.
 oBrowse:MarkColumn       := "SELECOL"
 oBrowse:FieldsGrid       := aFields
-oBrowse:Itens            := aItens
+oBrowse:Items            := aItens
 
 //ADICIONA ITENS POR QUERY
 oBrowse:Query            := "SELECT TOP 100 'F' AS SELECOL,B1_COD,B1_DESC,'EXEMPLO' AS DESCRICAO, 0.00 AS VALOR "+;
                                 " FROM "+RETSQLNAME("SB1")+" WHERE D_E_L_E_T_<>'*'"
-oBrowse:Titulo           := "Titulo Browse"
+oBrowse:Title           := "Titulo Browse"
 
 oBrowse:Create(oPanelGrid)
     
