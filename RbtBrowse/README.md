@@ -104,7 +104,7 @@
   ```
   
   #### Veja também
- <a href="https://www.rbtsistemas.com/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
   ### New <small class="text-muted">method</small>
 	Construtor da classe
@@ -134,7 +134,7 @@
 </table>
 
  #### Veja também
- <a href="https://www.rbtsistemas.com/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### SetFreeze <small class="text-muted">method</small>
      
@@ -176,7 +176,7 @@ Index of col to freeze, just 1 by limitation of framework
 
 
  #### Veja também
- <a href="https://www.rbtsistemas.com/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### CreateTemp <small class="text-muted">method</small>
 
@@ -223,7 +223,7 @@ Index of col to freeze, just 1 by limitation of framework
       
 
  #### Veja também
- <a href="https://www.rbtsistemas.com/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### GetColumnTotal <small class="text-muted">method</small>
 
@@ -263,7 +263,7 @@ Index of col to freeze, just 1 by limitation of framework
   </table>
 </div>
  #### Veja também
- <a href="https://www.rbtsistemas.com/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 
 ### GetRowsCount <small class="text-muted">method</small>
@@ -298,7 +298,7 @@ Index of col to freeze, just 1 by limitation of framework
 
 
  #### Veja também
- <a href="https://www.rbtsistemas.com/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 
 ### AdjustAFields <small class="text-muted">method</small>
@@ -315,7 +315,7 @@ Index of col to freeze, just 1 by limitation of framework
       
 
  #### Veja também
- <a href="https://www.rbtsistemas.com/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### CreateBrw <small class="text-muted">method</small>
 <hr />
