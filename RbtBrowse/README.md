@@ -134,7 +134,7 @@
 </table>
 
 #### Veja também
- <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### SetFreeze <small class="text-muted">method</small>
      
@@ -174,9 +174,9 @@ Index of col to freeze, just 1 by limitation of framework
 </table>
 </div>
 
+
 #### Veja também
- 
-<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### CreateTemp <small class="text-muted">method</small>
 
@@ -202,8 +202,9 @@ Index of col to freeze, just 1 by limitation of framework
   </tbody>
 </table>
 	  
+
 #### Veja também
- <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 
 ### CreateMarkColumn <small class="text-muted">method</small>
@@ -220,9 +221,9 @@ Index of col to freeze, just 1 by limitation of framework
       
       
       
-#### Veja também
 
-<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+#### Veja também
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### GetColumnTotal <small class="text-muted">method</small>
 
@@ -261,9 +262,9 @@ Index of col to freeze, just 1 by limitation of framework
     </tbody>
   </table>
 </div>
-
 #### Veja também
-<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
+ 
 
 
 ### GetRowsCount <small class="text-muted">method</small>
@@ -296,9 +297,9 @@ Index of col to freeze, just 1 by limitation of framework
 </tbody>
 </table>
 
-#### Veja também
 
-<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+#### Veja também
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 
 ### AdjustAFields <small class="text-muted">method</small>
@@ -313,8 +314,9 @@ Index of col to freeze, just 1 by limitation of framework
 #### Versão
     1.3.0
       
+
 #### Veja também
-<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### CreateBrw <small class="text-muted">method</small>
 <hr />
@@ -328,8 +330,9 @@ Index of col to freeze, just 1 by limitation of framework
     1.3.0
 #### Exemplo
      
+
 #### Veja também
-<a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 ### Create <small class="text-muted">method</small>
 <hr />
@@ -364,8 +367,9 @@ Index of col to freeze, just 1 by limitation of framework
   </table>
 </div>
 
+
 #### Veja também
- <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
 
 ### Destroy <small class="text-muted">method</small>
@@ -379,6 +383,7 @@ Index of col to freeze, just 1 by limitation of framework
 #### Versão
     1.3.0
       
+
 #### Veja também
- <a href="https://www.rbtsistemas.com/utils/advpl/" target="_blank">Rbt Sistemas</a>
+ <a href="https://www.rbtsistemas.com.br/utils/utils.php" target="_blank">Rbt Sistemas</a>
 
