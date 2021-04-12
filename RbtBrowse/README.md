@@ -30,14 +30,16 @@
 ## Sobre  
 
 **Exemplo RbtBrowse:**
+ <a href="https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/ExRbtBrowse.prw">Usage sample</a>
 
-![screenshot](https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/example.png?raw=true)	
+ ![screenshot](https://github.com/Rbt-Sistemas/Advpl/blob/master/RbtBrowse/example.png?raw=true)	
 
 ## Classe	 <h3>RbtBrowse <small class="text-muted">class</small>
   ### Definição
   <p class="lead">
       Class to create FwTemporaryTable/FwBrowse from FwBrowse with many
       features.
+
   </p>
   <h3>RbtBrowse <small class="text-muted">class</small>
    Class to create FwTemporaryTable/FwBrowse from FwBrowse with many
